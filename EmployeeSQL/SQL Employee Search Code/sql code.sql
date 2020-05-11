@@ -74,9 +74,11 @@ SELECT "Employees".emp_no, "Employees".first_name, "Employees".last_name,
 FROM "Employees"
 JOIN "Salaries" ON "Employees".emp_no = "Salaries".emp_no;
 
+
 --2. List first name, last name, and hire date for employees who were hired in 1986.
 
-SELECT * FROM "Employees"
+SELECT "Employees".first_name, "Employees".last_name, "Employees".hire_date
+FROM "Employees"
 WHERE hire_date BETWEEN '1986-01-01' AND '1986-12-31';
 
 --3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
@@ -107,7 +109,7 @@ FROM "Employees"
 INNER JOIN "Dept_emp"
 ON "Employees".emp_no = "Dept_emp".emp_no
 INNER JOIN "Departments"
-ON "Departments".dept_no = "Dept_emp".dept_no
+ON "Departments".dept_no = "Dept_emp".dept_no;
 
 --5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 SELECT "Employees".first_name, "Employees".last_name
